@@ -1,0 +1,141 @@
+#side-bar
+{
+	-fx-background-color: rgb(49,49,49);
+}
+
+#list
+{
+	-fx-background-color: rgb(83,83,83);
+}
+
+#food-type
+{
+	-fx-background-color: rgb(229,229,229);
+	-fx-background-radius: 20px;
+	-fx-border-radius: 20px;
+	-fx-padding: 10px;
+}
+
+#food-type-title
+{
+	-fx-background-color: rgb(83,83,83);
+	-fx-background-radius: 20px 20px 0 0;
+	-fx-border-radius: 20px 20px 0 0;
+}
+
+#food-type-scroll
+{
+	-fx-background-color: rgb(229,229,229);
+}
+
+.list-btn
+{
+	-fx-pref-width: 275;
+	-fx-pref-height: 55;
+	-fx-background-color: rgb(229,229,229);
+	-fx-border-color: rgb(83,83,83);
+	-fx-border-width: 0 0 2 0; 
+	-fx-border-style: none none solid none;
+	-fx-text-fill: rgb(83,83,83); 
+	-fx-font-size: 30px;
+	-fx-font-weight: 900;
+	-fx-alignment: center;
+	-fx-padding: 10px 0;
+}
+
+/* add this to fxml styleClass="edge-to-edge" */
+#res-list-scroll
+{
+	-fx-background: transparent; 
+	-fx-background-color: transparent;
+	-fx-background-radius: 15px;
+	-fx-border-radius: 15px;
+	-fx-background-color: rgb(229,229,229);
+}
+
+.res-list-wrapper
+{
+	-fx-pref-height: 80;
+	-fx-pref-width: 514;
+	-fx-background-color: rgb(229,229,229);
+	-fx-border-color: rgb(49, 49, 49);
+	-fx-border-width: 0 0 3 0; 
+	-fx-border-style: none none solid none;
+}
+
+.res-list-wrapper-first
+{
+	-fx-background-radius: 15px 15px 0 0;
+	-fx-border-radius: 15px 15px 0 0;
+}
+
+.res-list-wrapper-last
+{
+	-fx-background-radius: 0 0 15px 15px;
+	-fx-border-radius: 0 0 15px 15px;
+	-fx-border-width: 0;
+}
+
+.res-list-num-lab
+{
+	-fx-pref-height: 80;
+	-fx-pref-width: 80;
+	-fx-background-color: rgb(49,49,49);
+	-fx-alignment: center;
+	-fx-font-size: 35;
+}
+
+.res-list-num-lab-first
+{
+	-fx-background-radius: 15px 0 0 0;
+	-fx-border-radius: 15px 0 0 0;
+}
+
+.res-list-num-lab-last
+{
+	-fx-background-radius: 0 0 0 15px;
+	-fx-border-radius: 0 0 0 15px;
+}
+
+.res-list-cont
+{
+	-fx-alignment: center;
+	-fx-text-fill: rgb(83,83,83); 
+	-fx-font-size: 25px;
+	-fx-font-weight: 900;
+	-fx-pref-height: 80;
+	-fx-pref-width: 460;
+	-fx-padding-left: 80;
+}
+
+.res-list-cont-first
+{
+	-fx-background-radius: 0 15px 0 0;
+	-fx-border-radius: 0 15px 0 0;
+}
+
+.res-list-cont-last
+{
+	-fx-background-radius: 0 0 15px 0;
+	-fx-border-radius: 0 0 15px 0;
+}
+
+.active-background
+{
+	-fx-background-color: rgb(160,160,160) !important;
+	-fx-text-fill: #ffffff !important;
+}
+
+.confirm
+{
+	-fx-cursor: hand;
+}
+
+.back
+{
+	-fx-cursor: hand;
+}
+
+
+
+

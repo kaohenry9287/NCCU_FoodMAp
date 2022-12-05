@@ -1,0 +1,28 @@
+#container
+{
+	-fx-background-color: rgb(83,83,83);
+}
+
+
+.input-field
+{
+	-fx-background-color: rgb(229,229,229);
+	box-shadow: none;
+}
+
+#back
+{
+	-fx-background-color: #707070;
+	border: none;
+	-fx-cursor: hand;
+}
+
+.confirm-btn
+{
+	-fx-cursor: hand;
+}
+
+.choose-file-btn
+{
+	-fx-cursor: hand;
+}
