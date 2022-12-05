@@ -1,0 +1,108 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <style>
+    #map {
+      height: 100%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .info-text
+    {
+      padding: 5px;
+      font-weight: 500;
+    }
+
+    .fa-star
+    {
+      color: #fabc05;
+      margin-right: 5px;
+    }
+  </style>
+
+  
+    
+  
+  <script>
+     
+    var map;
+    var loc = '[object Object]';
+
+    if(loc != undefined){
+      loc = JSON.parse('[{"place_id":"ChIJ3ZnMlHuqQjQRMj4lIpQR6xE","lat":24.9881582,"lng":121.5760617,"name":"Juicy Bun Burger 就是棒 美式餐廳 政大店","rating":4.4,"openNow":false,"ratingTotal":1791}]');   
+    }
+
+    function initMap() {
+        //政大
+        map = new google.maps.Map(document.getElementById("map"), {
+            center: {lat: 24.9879, lng: 121.5774},
+            zoom: 17,
+        });
+
+        new google.maps.Marker({
+            position: {lat: 24.9879, lng: 121.5774},
+            map: map,
+            title: "政大",
+        });
+
+        //from google drive, use developer get this url
+        const icon = {
+          url: "https://lh3.googleusercontent.com/fife/AAWUweVa7ivPNiWYvWX-h3IknBBmFklkkVs7JIZRF7VjvzdGodYpCnUsJss7I-T7t6C2oYZRMaNIlNtr-HnvWuoK49htmOcQisaDx6YyooeskOmKObWeJNolfmKF923vbu8U88kBVgqv_PaT2FL16QaLMJ60yn_zpKbmt6yuGDfv9652XsvHzUHdMl6ZNZEXywWrTPPi7qr95auV4SoDKBVi2_2RkIclazqcIhJ0KkTJ0PoeBQiJu_miRZtS-LLnMhVPHVpthuHgfMO_6ZdhlEzAxq6j3hEgkw9PUgUOGOKWvuFHeNxHXifdwKRT6gGLmgY0nahjQxoMwcmZcF4acqgooM-_yxbUR7pdqkELGj2pCnUP3oM9W4QbvxMJmREf1qiadUHN2_c9gz3H_XmFyL9nW7vq2nuJYssgvpGTsCTKmB8Qc6aYpndpwPeB4x--a7PNKx8ss5Yt2YKS0SkXUybfGP8u5sDvs0uBVV04IK6doGYWWhSESxzgk359G6QTzNZQ73ELpN42xRjIXLC4Ojw3m7Cgx3bL3GA7PPB2YPQMj2PxWn70k3UfHk8FsuI2eHo3NJoRxtzPb6GdHzPJNY4yDTI1T1B3GZQaTt8HXEC23qx9x-ve-zOvRthkkVoR3cHvAZcyxS8qiPaLOry9zyq1nYbcj2KwCeEYlFCRwmmkaXSdRyEGi9fTITHY1HC_IWYEFdrAxv7tgClW5tD-13scQp3vhorUVmFIsVEVQWqUKSrbt3T0pSYNlmHpnrGuNwuCqa7kO_xdS8y6sKflccHldQ8Uodq6cleAHRAoswHi_09-xo5Aa1zWEVHWClUeYzISbe5UF_B5so0dlnj5iswpxGqW3Wjc9bmEmXUAz-Jik6aRGapDsKFzPslGuWscdgMP365EvhCNJWQhF8giZyqAfNOhMV3FvfPW1fkqcX_U0B09IpH6rRat7yRDig65g2_q5NGBytkjTDS8lOMjRTDqIykkyIgyCjYieLipPNMyz-CzGGaWzLEoKLOH3j8TTSp2g5qhLlUPGfJ_aUPyAF1PhU0qHJGwjQSb4kew5oKGnjq7GLYffJ9B0wExZZWyHDe1XfItxL3FtBUU702elFpKivTnttZ4onNHgrxqUh37rSUjAq23CUNeCxf6nK91QO2wOaCgq72jsLh-VbQg6xiHRA7QSR7USFWtTd8kEZ72n9oB_0I7RRzwzSAL8D6wY0r9Czp7Yi__lf2tdNAhGfVytifWTwALfmVAd5ea-_M4aoCD9ioHz1WpibS-tlD1SEbwCjOqsE7caXAuPklkd9dtIkF9pHF614Z0XLo60EeVf2bKgrB8qD48Zt1XUcVOL5fDuNqh_pQ=w2992-h1654", 
+          scaledSize: new google.maps.Size(30, 40), // scaled size
+        };
+
+        for(let data of loc)
+        {
+          // info window
+          let infowindow = new google.maps.InfoWindow({
+            content: `
+              <h3>${data.name}</h3>
+              <div class="info-text">加我： ${data.place_id}</div>
+              <div class="info-text">好吃嗎？ <i class="fa-solid fa-star"></i>${data.rating}</div>
+              <div class="info-text">多少人吃啊？ ${data.ratingTotal}個吃貨</div>
+              <div class="info-text">開了沒？ ${data.openNow?"開了啦!":"還沒喔~"}</div>
+            ` // 支援html
+          });
+
+          let marker = new google.maps.Marker({
+            position: {lat: parseFloat(data.lat), lng: parseFloat(data.lng) },
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: icon,
+            infowindow: infowindow
+          });
+
+          // 監聽 marker click 事件
+          google.maps.event.addListener(marker, 'click', function() {
+            this.infowindow.open(map, this);
+          });
+        }          
+      }
+    window.initMap = initMap;
+  </script>
+
+
+  <body>
+    <div id="map"></div>
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTkBLzDARjOIAzgTTo3VOQ9Rzu2LV-VV8&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

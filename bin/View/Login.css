@@ -1,0 +1,19 @@
+#logoPane
+{
+    -fx-background-color: #494949;
+}
+
+#loginPane
+{
+    -fx-background-color: #838383;
+}
+
+.signin-btn
+{
+	-fx-cursor: hand;
+}
+
+.register-btn
+{
+	-fx-cursor: hand;
+}

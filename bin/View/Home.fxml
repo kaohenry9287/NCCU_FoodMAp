@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="1016.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+   <children>
+      <Pane id="side-bar" fx:id="sideBar" prefHeight="655.0" prefWidth="277.0" stylesheets="@Home.css">
+         <children>
+            <ImageView fx:id="favoriteBtn" fitHeight="96.0" fitWidth="221.0" layoutX="27.0" layoutY="182.0" onMouseClicked="#clickFavorite" pickOnBounds="true" preserveRatio="true" styleClass="favorite-btn">
+               <image>
+                  <Image url="@../images/fav-btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="recommendBtn" fitHeight="95.0" fitWidth="223.0" layoutX="25.0" layoutY="341.0" onMouseClicked="#clickRecommend" pickOnBounds="true" preserveRatio="true" styleClass="recommend-btn">
+               <image>
+                  <Image url="@../images/rec-btn.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="userImage" fitHeight="70.0" fitWidth="70.0" layoutX="21.0" layoutY="21.0" onMouseClicked="#changePic" pickOnBounds="true" preserveRatio="true" />
+            <Text fx:id="userName" fill="WHITE" layoutX="112.0" layoutY="69.0" onMouseClicked="#changeName" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="name" wrappingWidth="135.29652404785156">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="30.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Pane id="header" layoutX="277.0" layoutY="-1.0" prefHeight="104.0" prefWidth="740.0" stylesheets="@Home.css">
+         <children>
+            <TextField id="search-input" fx:id="searchField" layoutX="505.0" layoutY="35.0" prefHeight="36.0" prefWidth="200.0" promptText="Search" stylesheets="@Home.css">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="searchBtn" fitHeight="30.0" fitWidth="40.0" layoutX="509.0" layoutY="38.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true" styleClass="search-btn">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="295.0" layoutX="30.0" layoutY="20.0" onMouseClicked="#addFavoritePlace" pickOnBounds="true" preserveRatio="true" styleClass="add-place-btn">
+               <image>
+                  <Image url="@../images/add-place.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="placeField" layoutX="85.0" layoutY="38.0" prefHeight="31.0" prefWidth="232.0" promptText="Add Place" styleClass="add-place" stylesheets="@Favorite.css">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></TextField>
+         </children>
+      </Pane>
+      <Pane id="content" layoutX="277.0" layoutY="103.0" prefHeight="552.0" prefWidth="741.0" stylesheets="@Home.css">
+         <children>
+            <WebView fx:id="map" layoutY="-1.0" prefHeight="552.0" prefWidth="741.0" />
+         </children></Pane>
+   </children>
+</AnchorPane>

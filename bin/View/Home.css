@@ -1,0 +1,60 @@
+#side-bar
+{
+	-fx-background-color: rgb(49,49,49);
+}
+
+#header
+{
+	-fx-background-color: rgb(191,191,191);
+}
+
+#content
+{
+	-fx-background-color: rgb(83,83,83);
+}
+
+#search-input
+{
+	-fx-border-radius: 30px;
+	-fx-background-radius: 30px;
+}
+
+.add-place
+{
+	-fx-border-radius: 0 30px 30px 0;
+	-fx-background-radius: 0 30px 30px 0;
+	-fx-background-color: rgb(239, 179, 37);
+	-fx-font-weight: 900;
+	-fx-text-fill: #ffffff;
+	-fx-prompt-text-fill: #ffffff;
+}
+
+.add-place-btn
+{
+	-fx-cursor: hand;
+}
+
+.search-btn
+{
+	-fx-cursor: hand;
+}
+
+.favorite-btn
+{
+	-fx-cursor: hand;
+}
+
+.recommend-btn
+{
+	-fx-cursor: hand;
+}
+
+.modify-name
+{
+	-fx-font-size: 30px;
+	-fx-text-fill: #000000;
+	-fx-pref-width: 173;
+	-fx-pref-height: 57;
+}
+
+

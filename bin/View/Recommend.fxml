@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="981.0" stylesheets="@Recommend.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.RecommendController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="596.0" prefWidth="356.0" styleClass="side-bar" stylesheets="@Recommend.css">
+         <children>
+            <ImageView fitHeight="61.0" fitWidth="277.0" layoutX="40.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/recommend.png" />
+               </image>
+            </ImageView>
+            <Pane id="food-type" layoutX="27.0" layoutY="116.0" prefHeight="335.0" prefWidth="304.0" stylesheets="@Recommend.css">
+               <children>
+                  <ScrollPane id="food-type-scroll" fx:id="foodTypeScroll" layoutY="48.0" prefHeight="264.0" prefWidth="304.0" stylesheets="@Recommend.css">
+                     <content>
+                        <VBox fx:id="scrollVBox" prefHeight="0.0" prefWidth="236.0" />
+                     </content>
+                  </ScrollPane>
+                  <FlowPane id="food-type-title" prefHeight="48.0" prefWidth="238.0" stylesheets="@Recommend.css">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="48.0" prefWidth="304.0" text="Food Type" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </FlowPane>
+               </children>
+            </Pane>
+            <CheckBox contentDisplay="CENTER" layoutX="37.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#addTimeFilter" prefHeight="15.0" prefWidth="141.0" styleClass="checkbox" stylesheets="@Recommend.css" text="Breakfast" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox contentDisplay="CENTER" layoutX="216.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#addTimeFilter" prefHeight="31.0" prefWidth="110.0" styleClass="checkbox" stylesheets="@Recommend.css" text="Dinner" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox contentDisplay="CENTER" layoutX="38.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#addTimeFilter" prefHeight="15.0" prefWidth="141.0" styleClass="checkbox" stylesheets="@Recommend.css" text="Dessert" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="20.0" />
+               </font>
+            </CheckBox>
+            <CheckBox contentDisplay="CENTER" layoutX="216.0" layoutY="477.0" mnemonicParsing="false" onMouseClicked="#addTimeFilter" prefHeight="31.0" prefWidth="116.0" styleClass="checkbox" stylesheets="@Recommend.css" text="Lunch" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="20.0" />
+               </font>
+            </CheckBox>
+         </children>
+      </Pane>
+      <Pane layoutX="354.0" prefHeight="595.0" prefWidth="627.0" styleClass="list-pane">
+         <children>
+            <ImageView fitHeight="58.0" fitWidth="136.0" layoutX="455.0" layoutY="507.0" onMouseClicked="#confirm" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/confirm.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fitHeight="79.0" fitWidth="149.0" layoutX="281.0" layoutY="504.0" onMouseClicked="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ScrollPane id="res-list-scroll" fx:id="restaurantScroll" layoutX="32.0" layoutY="74.0" prefHeight="402.0" prefWidth="564.0" style="-fx-background-color: transparent;" styleClass="edge-to-edge" stylesheets="@Recommend.css">
+               <content>
+                  <VBox fx:id="restaurantList" prefWidth="561.0" style="-fx-border-radius: 15px; -fx-background-radius: 15px;" stylesheets="@Recommend.css" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
+   </children>
+</AnchorPane>
