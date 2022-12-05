@@ -1,0 +1,6 @@
+baseURI,http://localhost:3000
+map,/map
+place,/map/place
+restaurants,/restaurants
+simple-restaurants,/restaurants/simple-restaurants
+full-restaurants,/restaurants/full-restaurants
